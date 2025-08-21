@@ -150,9 +150,9 @@ final class SymfonyInstrumentation
                     $prop->inject($response, ResponsePropagationSetter::instance(), $scope->context());
                 }
 
-                // Propagate response baggage to response, if ResponseBaggagePropagator is present
-                if (class_exists('OpenTelemetry\Contrib\Propagation\ResponseBaggage\ResponseBaggagePropagator')) {
-                    $prop = new \OpenTelemetry\Contrib\Propagation\ResponseBaggage\ResponseBaggagePropagator();
+                // Propagate solarwinds specific response to response, if SolarwindsResponsePropagator is present
+                if (class_exists('OpenTelemetry\Contrib\Propagation\Solarwinds\SolarwindsResponsePropagator')) {
+                    $prop = new \OpenTelemetry\Contrib\Propagation\Solarwinds\SolarwindsResponsePropagator();
                     $prop->inject($response, ResponsePropagationSetter::instance(), $scope->context());
                 }
 
